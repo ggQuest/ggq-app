@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Soft";
+  src: local("Soft"), url(/fonts/soft_pro.ttf) format("truetype");
+}
+
+
+@layer base {
+  :root {
+    --color-accent: 138,43,226;
+    --color-accent-light: 57, 29, 117;
+    --color-background: 18, 19, 22 ;
+    --color-background-glow: 32, 32, 32; // blacker
+    --color-background-light: 32, 32, 32, 0.1;
+    --color-background-lightest: 23, 38, 40;
+    --color-foreground: 255, 255, 255;
+    --color-foreground-button: 255, 255, 255;
+    --color-foreground-alt-100: 224, 225, 226;
+    --color-foreground-alt-200: 192, 196, 197;
+    --color-foreground-alt-300: 134, 148, 152;
+    --color-foreground-alt-400: 43, 56, 59;
+    --color-foreground-alt-500: 255, 255, 255;
+    --color-primary: 32, 32, 32;
+    --color-primary-light: 255, 255, 255;
+    --color-primary-dark: 6, 85, 6;
+  }
+}

@@ -1,0 +1,1 @@
+export const shortAddr = (hash : any) => `${hash.slice(0,5)}...${hash.slice(-4)}`

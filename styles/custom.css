@@ -1,0 +1,31 @@
+::selection {
+  background: rgb(var(--color-primary));
+}
+
+/* https://css-tricks.com/numeric-inputs-a-comparison-of-browser-defaults/ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+  font-family: "Soft";
+  src: local("Soft"), url(/fonts/soft_pro.ttf) format("truetype");
+}
+
+* {
+  font-family: "Soft";
+}
+
+.bg-gradient {
+  background: radial-gradient(
+    97.8% 63.1% at 2.1999999999999997% 0%,
+    rgb(var(--color-background-light)) 0%,
+    rgb(var(--color-background-light)) 100%
+  );
+}
