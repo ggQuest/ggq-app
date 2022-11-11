@@ -10,8 +10,8 @@ const ProfileConnected = (profile : any) => {
   //const {account} = useAccount();
  
   const [editProfileModalOpen, setEditProfileModalOpen] = useState(false);
-
-  // TODO : get address and info as the user is already connected and owns a questId
+  // TODO : 
+  // api reference : https://app.swaggerhub.com/apis-docs/H0tmilk/ggQuest/1.0.0#/public/get_profiles__playerAddress_
   const address = ""; // profile.address
   const pfp = "/assets/ggquest/logoProfile.jpeg"; // profile.profilePictureURL
   const name = "DANIEL ZIMMERMAN"; // profile.coverPictureURL
@@ -35,6 +35,8 @@ const ProfileConnected = (profile : any) => {
   }
   return (
     <div className="bg-gradient rounded-2xl border border-foreground-alt-500 shadow ">
+      {/* TODO : remove all these infos and replace with fetched info from above */}
+
       <div className="relative border-b border-foreground-alt-500">
         <img src="/assets/ggquest/Sandbox.png" className="border rounded-xl object-fill">
         </img>

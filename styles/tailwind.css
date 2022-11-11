@@ -10,8 +10,8 @@
 
 @layer base {
   :root {
-    --color-accent: 138,43,226;
-    --color-accent-light: 57, 29, 117;
+    --color-accent: 57, 29, 117;
+    --color-accent-light: 138,43,226;
     --color-background: 18, 19, 22 ;
     --color-background-glow: 32, 32, 32; // blacker
     --color-background-light: 32, 32, 32, 0.1;

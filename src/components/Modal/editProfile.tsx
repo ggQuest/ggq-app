@@ -3,16 +3,11 @@ import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
 
-//import { Role } from 'types';
-//import { updateProfile } from 'utils/api';
-//import { useMobile } from 'hooks';
-//import { OnboardingFormDataType } from 'contexts';
-//import { userSlice } from '@/selectors';
 import { Button } from './../ProfileComponents/Button';
 import { Input } from "./../ProfileComponents/Input";
 import { Modal } from "./../ProfileComponents/Modal";
-
-//import { updateUserProfile } from '@/slices/user';
+import updateProfile from '@/hooks/mutations/updateProfile';
+import createProfile from '@/hooks/mutations/createProfile';
 
 type Steps = 'active' | 'idle' | 'error';
 
@@ -29,10 +24,7 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
   address,
   isUserID
 }) => {
-  //const isMobile = useMobile();
   const isMobile = false;
-  //const dispatch = useDispatch();
-  //const { profile } = useSelector(userSlice);
   const [formData, setFormData] : any = React.useState({});
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [fileUrl, setFileUrl] = React.useState<string>();
@@ -59,7 +51,7 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
     setShouldRemoveAvi(true);
   };
 
-  // TODO : modify/create questID
+  // TODO : update a questID
   /*const handleSubmitUpdate = async () => {
     try {
       setIsLoading(true);
@@ -67,8 +59,8 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
       if (!formData) {
         return toast.error('Something went wrong.');
       }
-
-      const formDataToBeSent: OnboardingFormDataType = {
+      // TODO : DataToBeSent to create in a types file
+      const formDataToBeSent: DataToBeSent = {
         full_name: formData.full_name,
       };
       
@@ -78,33 +70,35 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
         formDataToBeSent,
       );
 
-      dispatch(updateUserProfile({ ...data, avatar: fileUrl }));
-
       if (error || !data) {
-        setWalletRequestStep('error');
         return toast.error('Failed to update profile');
       }
 
       toast.success('Profile updated successfully');
-      setWalletRequestStep('idle');
       onClose();
     } catch (error) {
       // @ts-expect-error
       toast.error(error.message);
       console.error(error);
-    } finally {
-      setIsLoading(false);
     }
   };
   */
 
   /*
+  // TODO : Mint a questID, just call the function to do so
   const handleSubmitMint = async () => {
+    try{
+      const { data, error } = await createProfile(
+        address,
+        '',
+        formDataToBeSent2,
+      );
+    }catch(error){
 
+    }
   }
   */
 
-  
   const handleFileUpload = (event: any) => {
     const file = event.target.files[0];
     const fileUrl = URL.createObjectURL(file as Blob);

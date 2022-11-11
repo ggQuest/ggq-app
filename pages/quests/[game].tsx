@@ -4,6 +4,7 @@ import RowQuest from '@/components/RowQuest';
 import { QuestInfo } from '@/types';
 
 import Sandbox from "/assets/ggquest/quests_banner/Sandbox/Sandbox.png"
+import useAllQuests from '@/hooks/useAllQuests';
 
 export const Thing = styled.div`
   box-sizing: border-box;
@@ -49,39 +50,53 @@ const GameHeader = styled.div<GHProps>`
 const Game = () => {
   const router = useRouter()
   const { game } = router.query
-  // TODO : query all quests of the game to get relevant infos
+  
+  const quests = useAllQuests();
+  // filter by GameId
+  quests?.filter((obj : any) => obj.gameId === game)
+
+  // TODO : quests contains all infos relevant to display
+  // create just an array with objects of type {infos}
+  // and map through it to display the right RowQuest just below
+  // API reference : https://app.swaggerhub.com/apis-docs/H0tmilk/ggQuest/1.0.0#/public/get_quests
   const infos : QuestInfo = {
     title: "SANDBOXIAN",
     reputation_reward: 200,
     description: "tem.description",
     add_rewards: 21,
-    contract_address: "0x0000000"
+    contract_address: "0x0000000",
+    thumbnailImageURL : "",
+    gameCoverImageURL : "",
+    gameName:""
   }
+  // the array QUESTS_INFOS will contain several infos objects
 
   return (
     <>
      
      <div className="bg-gradient rounded-2xl border border-foreground-alt-500 shadow ">
       <div className="relative border-b border-foreground-alt-500">
+        {/* TODO : replace src by QUESTS_INFOS[0].gameCoverImageURL */}
         <img src="/assets/ggquest/Sandbox.png" className="border rounded-xl object-fill"/>
       </div>
       
       <div className="flex relative px-6 py-4 sm:px-8 sm:py-6">
        
         <div className="columns-1">
+          {/* TODO : replace src by QUESTS_INFOS[0].gameName */}
           <h1 className="text-4xl p-4">THE SANDBOX</h1>
         </div>
       </div>
     </div>
     
-      <div className="flex flex-col justify-center mt-10 mb-10">
+      <div className="flex flex-col justify-center items-center mt-10 mb-10">
         <div className="text-center">
             <Thing>AVAILABLE QUESTS</Thing>
         </div>
        
         <div className="flex justify-center items-stretch">
             <div className="grid grid-cols-2 gap-8 place-items-center">
-                
+                  {/* TODO : remove this and map instead the array QUESTS_INFOS */}
                   <RowQuest reward={infos.reputation_reward} questTitle={infos.title}/>
                   <RowQuest reward={infos.reputation_reward} questTitle={infos.title}/>
                   <RowQuest reward={infos.reputation_reward} questTitle={infos.title}/>

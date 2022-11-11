@@ -6,7 +6,7 @@ import { useCallback } from 'react'
 const RowQuest = (props : any) => {
     const { config, error } = usePrepareContractWrite({
         addressOrName : '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
-        abi : ABI,
+        contractInterface : ABI,
         functionName: 'claimReward',
     })
     const { write } = useContractWrite(config)
@@ -15,7 +15,7 @@ const RowQuest = (props : any) => {
     const handleClaimQuest = useCallback(() => write?.(), [write])
   
     return (
-        <div className="flex flex-row mt-10 rounded-lg border border-gray-200/80 p-6">
+        <div className="flex flex-row mt-10 rounded-sm border border-gray-200/80 p-6">
             <div className="relative border-r-2 border-white-500">
                 <img className="w-30 h-50 rounded-md object-cover" src="/assets/quests_banner/Sandbox/quests/eight.png"
                 alt="User" />

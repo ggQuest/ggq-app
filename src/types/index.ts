@@ -10,4 +10,7 @@ export interface QuestInfo {
   description: string;
   add_rewards: any;
   contract_address: string | number;
+  thumbnailImageURL : string;
+  gameCoverImageURL : string;
+  gameName: string;
 }

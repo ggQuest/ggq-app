@@ -29,7 +29,7 @@ const Dashboard: GGQuestPage = () => {
             <ProfileConnected profile={profile}/> : 
             <ProfileCreate/>
           )
-          : <Button/> 
+          : ""
         }
       </div>
       <div className="mt-4">
