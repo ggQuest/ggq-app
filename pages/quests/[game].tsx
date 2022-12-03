@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Image from "next/image"; 
 import styled from "styled-components";
 import RowQuest from '@/components/RowQuest';
 import { QuestInfo } from '@/types';
@@ -74,27 +75,27 @@ const Game = () => {
   return (
     <>
      
-     <div className="bg-gradient rounded-2xl border border-foreground-alt-500 shadow ">
+     <div className="border shadow bg-gradient rounded-2xl border-foreground-alt-500 ">
       <div className="relative border-b border-foreground-alt-500">
         {/* TODO : replace src by QUESTS_INFOS[0].gameCoverImageURL */}
-        <img src="/assets/ggquest/Sandbox.png" className="border rounded-xl object-fill"/>
+      <Image src="/assets/ggquest/Sandbox.png" className="object-fill border rounded-xl" alt={"quest info description"}/>
       </div>
       
-      <div className="flex relative px-6 py-4 sm:px-8 sm:py-6">
+      <div className="relative flex px-6 py-4 sm:px-8 sm:py-6">
        
         <div className="columns-1">
           {/* TODO : replace src by QUESTS_INFOS[0].gameName */}
-          <h1 className="text-4xl p-4">THE SANDBOX</h1>
+          <h1 className="p-4 text-4xl">THE SANDBOX</h1>
         </div>
       </div>
     </div>
     
-      <div className="flex flex-col justify-center items-center mt-10 mb-10">
+      <div className="flex flex-col items-center justify-center mt-10 mb-10">
         <div className="text-center">
             <Thing>AVAILABLE QUESTS</Thing>
         </div>
        
-        <div className="flex justify-center items-stretch">
+        <div className="flex items-stretch justify-center">
             <div className="grid grid-cols-2 gap-8 place-items-center">
                   {/* TODO : remove this and map instead the array QUESTS_INFOS */}
                   <RowQuest reward={infos.reputation_reward} questTitle={infos.title}/>
