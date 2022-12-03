@@ -3,7 +3,8 @@ import Button from "./Button";
 import { useAccount } from "@/hooks/useAccount";
 import SkillBar from 'react-skillbars';
 import { EditProfileModal } from "./Modal/editProfile";
-
+// import { ENS } from '@ensdomains/ensjs'
+// import { ethers } from 'ethers'
 
 
 const ProfileConnected = (profile : any) => {
@@ -33,16 +34,17 @@ const ProfileConnected = (profile : any) => {
   const handleEditProfileClick = () => {
     setEditProfileModalOpen(true);
   }
+
   return (
-    <div className="bg-gradient rounded-2xl border border-foreground-alt-500 shadow ">
+    <div className="items-center mb-20 border shadow bg-gradient rounded-2xl border-foreground-alt-500">
       {/* TODO : remove all these infos and replace with fetched info from above */}
 
       <div className="relative border-b border-foreground-alt-500">
-        <img src="/assets/ggquest/Sandbox.png" className="border rounded-xl object-fill">
+        <img src="/assets/ggquest/Sandbox.png" className="object-fill w-full border rounded-xl">
         </img>
       </div>
       
-      <div className="flex relative px-6 py-4 sm:px-8 sm:py-6">
+      <div className="relative flex px-6 py-4 sm:px-8 sm:py-6">
         <img
           src={pfp}
           className="w-[150px] h-[150px] border-1 border-white -mt-[50px] rounded-xl"
