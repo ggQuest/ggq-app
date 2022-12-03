@@ -1,6 +1,7 @@
 import { useContractWrite, usePrepareContractWrite } from 'wagmi'
 import ABI from "@/abi/commonABI.abi.json"
 import { useCallback } from 'react'
+import Image from "next/image";
 
 
 const RowQuest = (props : any) => {
@@ -15,19 +16,19 @@ const RowQuest = (props : any) => {
     const handleClaimQuest = useCallback(() => write?.(), [write])
   
     return (
-        <div className="flex flex-row mt-10 rounded-sm border border-gray-200/80 p-6">
+        <div className="flex flex-row p-6 mt-10 border rounded-sm border-gray-200/80">
             <div className="relative border-r-2 border-white-500">
-                <img className="w-30 h-50 rounded-md object-cover" src="/assets/quests_banner/Sandbox/quests/eight.png"
+            <Image className="object-cover rounded-md w-30 h-50" src="/assets/quests_banner/Sandbox/quests/eight.png"
                 alt="User" />
             </div>
 
             <div className="flex flex-col px-6 ">
-                <div className="flex h-8 flex-row">
+                <div className="flex flex-row h-8">
                     <h2 className="text-lg font-semibold ">{props.questTitle}</h2>
                 
                 </div>
 
-                <div className="my-2 flex flex-row space-x-2">
+                <div className="flex flex-row my-2 space-x-2">
                 <div className="flex flex-row">
                 
 

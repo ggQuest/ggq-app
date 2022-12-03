@@ -3,6 +3,7 @@ import Button from "./Button";
 import { useAccount } from "@/hooks/useAccount";
 import SkillBar from 'react-skillbars';
 import { EditProfileModal } from "./Modal/editProfile";
+import Image from "next/image";
 // import { ENS } from '@ensdomains/ensjs'
 // import { ethers } from 'ethers'
 
@@ -40,14 +41,15 @@ const ProfileConnected = (profile : any) => {
       {/* TODO : remove all these infos and replace with fetched info from above */}
 
       <div className="relative border-b border-foreground-alt-500">
-        <img src="/assets/ggquest/Sandbox.png" className="object-fill w-full border rounded-xl">
-        </img>
+        <Image src="/assets/ggquest/Sandbox.png" className="object-fill w-full border rounded-xl" />
+        
       </div>
       
       <div className="relative flex px-6 py-4 sm:px-8 sm:py-6">
-        <img
+        <Image
           src={pfp}
           className="w-[150px] h-[150px] border-1 border-white -mt-[50px] rounded-xl"
+          alt={pfp}
         />
         <div className="columns-1 -mt-[12px]">
           <h2 className="p-4">{name}</h2>

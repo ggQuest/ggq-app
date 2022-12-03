@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-
+import Image from "next/image";
 
 import Button from "./Button";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
@@ -29,13 +29,13 @@ const ProfileCreate: FC = () => {
 
 
   return (
-    <div className="bg-gradient rounded-2xl border border-foreground-alt-500 shadow ">
+    <div className="border shadow bg-gradient rounded-2xl border-foreground-alt-500 ">
       <div className="relative border-b border-foreground-alt-500">
-        <img src="/assets/ggquest/coverPink.png" className=" border rounded-xl object-fill">
-        </img>
+        <Image src="/assets/ggquest/coverPink.png" className="object-fill border rounded-xl"  alt="Profile Image"/>
+
       </div>
       
-      <div className="flex relative px-6 py-4 sm:px-8 sm:py-6">
+      <div className="relative flex px-6 py-4 sm:px-8 sm:py-6">
 
         <EditProfileModal
           isOpen={editProfileModalOpen}

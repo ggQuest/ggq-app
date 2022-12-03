@@ -124,7 +124,7 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
             {isUserID ? "Modify Your Quest ID" : "Create Your Quest ID"}
           </h3>
         </div>
-        <form className="mt-6 flex flex-col gap-6">
+        <form className="flex flex-col gap-6 mt-6">
               <Input
                 placeholder="CHOOSE UNIQUE USERNAME"
                 value={formData.full_name}
@@ -140,7 +140,7 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
               
             
             </div>
-            <div className="ml-6 mt-8 flex flex-col">
+            <div className="flex flex-col mt-8 ml-6">
                 <Button variant="secondary" onClick={onAddPicClick}>
                   CHANGE PICTURE
                 </Button>
@@ -164,7 +164,7 @@ export const EditProfileModal: React.FC<IEditProfileModalProps> = ({
           </div>
 
           <div className={`flex ${isMobile ? 'w-full' : 'w-1/2'} flex-col`}>
-            <img
+            <Image
                 src={fileUrl || formData.avatar || '/assets/ggquest/pfp.jpeg'}
                 alt="Your avatar"
                 className="ml-6 h-[100px] w-[100px] rounded-full border-[1.5px] border-indigoGray-30 object-cover"

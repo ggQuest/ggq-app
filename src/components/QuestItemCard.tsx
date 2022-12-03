@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface QuestItemProps {
     gameImg?: string;
     title?: string;
@@ -9,24 +10,24 @@ const QuestItemCard = ({gameImg, title, reward} : QuestItemProps) => {
     const isClaimed = false;
 
     return (
-        <div className="grid place-items-center max-w-sm bg-white rounded-sm border shadow-md dark:bg-black dark:border-white">
+        <div className="grid max-w-sm bg-white border rounded-sm shadow-md place-items-center dark:bg-black dark:border-white">
             <div className="border-b">
-                <img className="w-60 h-60 mx-auto rounded-t-lg" src={gameImg} alt="" />
+            <Image className="mx-auto rounded-t-lg w-60 h-60" src={gameImg} alt="" />
             </div>
 
             <div className="p-5">
                 <a href="#">
-                    <p className="grid place-items-center mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <p className="grid mb-2 text-xl font-bold tracking-tight text-gray-900 place-items-center dark:text-white">
                         {title}
                     </p>
                 </a>
-                <a className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-violet-800 rounded-sm">
+                <a className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-sm bg-violet-800">
                     + {reward} XP
                 </a>
             
                 {
                     isClaimed ? 
-                    <a className="inline-flex items-center ml-5 py-2 px-3 text-sm font-medium text-center text-white bg-teal-500 rounded-sm hover:bg-blue-800 ">
+                    <a className="inline-flex items-center px-3 py-2 ml-5 text-sm font-medium text-center text-white bg-teal-500 rounded-sm hover:bg-blue-800 ">
                         CLAIMED
                     </a>
                     : 

@@ -18,6 +18,7 @@ const Dashboard: GGQuestPage = () => {
   // TODO : fetch to know if user has already a questID
   let questId = useProfile(address)
   
+  
   useEffect(() => {
     if(questId?.isRegistered === true) setProfile(questId)
   }, [questId])

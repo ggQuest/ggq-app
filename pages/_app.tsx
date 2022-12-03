@@ -30,7 +30,7 @@ const { chains, provider } = configureChains(
     chain.arbitrumGoerli,
     chain.optimismGoerli,
   ],
-  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+  [publicProvider()]
 )
 
 
