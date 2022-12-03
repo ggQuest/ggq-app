@@ -3,6 +3,33 @@ import { QuestInfo } from "@/types";
 import QuestCatalogue from "./QuestCatalogue";
 
 
+const questCatalogMock = [
+    {
+        id: 1,
+        gameNameOrId: "SandBox",
+    },
+    {
+        id: 2,
+        gameNameOrId: "2",
+    },
+    {
+        id: 3,
+        gameNameOrId: "3",
+    },
+    {
+        id: 4,
+        gameNameOrId: "4",
+    },
+    {
+        id: 5,
+        gameNameOrId: "5",
+    },
+    {
+        id: 6,
+        gameNameOrId: "6",
+    },
+]
+
 const GamesAvailable = ()=> {
     
     // TODO : get all games available from backend
@@ -12,33 +39,14 @@ const GamesAvailable = ()=> {
     const games = useAllGames();
     
     return ( 
-        <div className="flex justify-center items-stretch">
+        <div className="flex items-stretch justify-center">
             <div className="grid grid-cols-4 gap-8 place-items-center">
-                {/* TODO : remove this and map instead the array games to get all games info */}
-
-                <div className="flex-initial w-64">
-                    <QuestCatalogue  game="Sandbox"/>
-                </div>
-                <div className="flex-initial w-64">
-                    <QuestCatalogue game="2"/>
-
-                </div>
-                <div className="flex-initial w-64">
-                    <QuestCatalogue  game="3"/>
-
-                </div>
-                <div className="flex-initial w-64">
-                    <QuestCatalogue  game="4"/>
-
-                </div>
-                <div className="flex-initial w-64">
-                    <QuestCatalogue  game="5"/>
-
-                </div>
-                <div className="flex-initial w-64">
-                    <QuestCatalogue  game="6"/>
-
-                </div>
+                {questCatalogMock.map((gameNameOrId: string, id) => (
+                     // eslint-disable-next-line react/jsx-key
+                     <div className="flex-initial w-64">
+                        <QuestCatalogue key={id} game={gameNameOrId} />
+                        </div>
+                ))} 
             </div>
         </div>
     )

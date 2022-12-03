@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ConnectKitButton } from 'connectkit'
+// import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { shortAddr } from "@/lib/utils";
 import Button from "./Button";
 
@@ -8,18 +8,20 @@ interface Props {
 }
 
 const TopNavbar: FC<Props> = ({ PageTitle }) => (
-  <div className="flex grow mb-8 sm:mb-12">
+  <div className="flex mb-8 grow sm:mb-12">
     <div className="flex-initial sm:pr-4">
       <PageTitle />
     </div>
-    <div className="flex-none grow justify-end items-center hidden sm:flex h-10">
-      <ConnectKitButton.Custom>
-				{({ show, isConnected, address, ensName }) => (
-					<Button onClick={show} className="px-4 py-3 rounded-full bg-183c4a text-ffffff text-14">
-						{isConnected ? ensName ?? shortAddr(address) : 'Connect Wallet'}
-					</Button>
-				)}
-			</ConnectKitButton.Custom>
+    <div className="items-center justify-end flex-none hidden h-10 grow sm:flex">
+    {/* <ConnectButton
+        label="Start here"
+        accountStatus={{
+          smallScreen: "avatar",
+          largeScreen: "full",
+        }}
+        chainStatus="icon"
+        showBalance={false}
+      /> */}
     </div>
   </div>
 );

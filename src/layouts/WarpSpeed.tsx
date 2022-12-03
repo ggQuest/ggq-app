@@ -4,6 +4,9 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import LeftNavbar from "@/components/LeftNavbar";
 import TopNavbar from "@/components/TopNavbar";
+import { NavbarQuest } from '../components/NavbarQuest/index';
+import { BannerCarousel } from "@/components/BannerCarousel";
+import { FooterQuest } from "@/components/FooterQuest";
 
 type Page<P = {}> = NextPage<P> & {
   PageTitle?: FC;
@@ -24,13 +27,16 @@ const WarpSpeed: FC<Props> = ({ Component, pageProps }) => {
   return (
     <>  
       
-        <LeftNavbar />
-        <main className="sm:pl-64">
+        {/* <LeftNavbar /> */}
+        <NavbarQuest />
+        <BannerCarousel />
+        <main className="bg-quest">
           <div className="px-4 py-2 sm:px-10 sm:py-10 text-foreground">
             <TopNavbar PageTitle={PageTitle} />
               <Component {...pageProps} />
           </div>
         </main>
+        <FooterQuest />
         </>
   );
 };
